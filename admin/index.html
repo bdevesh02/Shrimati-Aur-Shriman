@@ -16,5 +16,20 @@
 <body>
   <div class="cms-loading"><strong>Shrimati &amp; Shriman</strong>Opening the publishing dashboard…</div>
   <script src="https://unpkg.com/decap-cms@3.8.3/dist/decap-cms.js"></script>
+  <script>
+    (function () {
+      var loading = document.querySelector('.cms-loading');
+      function hideLoading() {
+        var cms = document.querySelector('#nc-root');
+        if (cms && cms.children.length) {
+          loading.remove();
+          observer.disconnect();
+        }
+      }
+      var observer = new MutationObserver(hideLoading);
+      observer.observe(document.body, { childList: true, subtree: true });
+      hideLoading();
+    })();
+  </script>
 </body>
 </html>
