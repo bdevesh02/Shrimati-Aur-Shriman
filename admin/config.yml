@@ -10,11 +10,6 @@ media_folder: assets/uploads
 public_folder: /assets/uploads
 logo_url: /assets/img/favicon.svg
 
-media_library:
-  config:
-    multiple: true
-    max_file_size: 5000000
-
 collections:
   - name: settings
     label: Site Settings
