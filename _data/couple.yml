@@ -1,21 +1,23 @@
-# Edit these values from the website's /admin/ page (Site Settings), or here.
-couple_name: "Shrimati & Shriman"
-partner_one_name: "Your Name"
-partner_two_name: "Her Name"
-relationship_start: 2024-02-14
-welcome_message: "This is the home of our favourite moments — the little ones, the life-changing ones, and everything still to come."
-hero_image: "/assets/img/placeholders/hero-placeholder.svg"
-hero_image_alt: "Placeholder for the couple's main photograph"
-footer_message: "Still choosing each other, one memory at a time."
+couple_name: Shrimati & Shriman
+partner_one_name: Dev
+partner_two_name: Geet
+relationship_start: 2025-06-07
+welcome_message: This is the home of our favourite moments — the little ones,
+  the life-changing ones, and everything still to come.
+hero_image: /assets/uploads/hero/whatsapp-image-2026-06-13-at-18.57.57-2-.jpeg
+hero_image_alt: The Most Perfect Person <3
+footer_message: Still choosing each other, one memory at a time.
 show_countdown: true
 demo_mode: true
 partner_one:
-  name: "Your Name"
-  photo: "/assets/img/placeholders/profile-one.svg"
-  photo_alt: "Placeholder portrait for the first partner"
-  bio: "Add a short, warm introduction here — favourite things, quirks, or what you love about your partner."
+  name: Devesh
+  photo: /assets/img/placeholders/profile-one.svg
+  photo_alt: Placeholder portrait for the first partner
+  bio: Add a short, warm introduction here — favourite things, quirks, or what you
+    love about your partner.
 partner_two:
-  name: "Her Name"
-  photo: "/assets/img/placeholders/profile-two.svg"
-  photo_alt: "Placeholder portrait for the second partner"
-  bio: "Add a short, warm introduction here — favourite things, quirks, or what you love about your partner."
+  name: Her Name
+  photo: /assets/img/placeholders/profile-two.svg
+  photo_alt: Placeholder portrait for the second partner
+  bio: Add a short, warm introduction here — favourite things, quirks, or what you
+    love about your partner.
