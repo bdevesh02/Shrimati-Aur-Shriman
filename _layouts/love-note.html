@@ -1,0 +1,9 @@
+---
+layout: page
+---
+<article class="love-note-detail">
+  <p class="detail-meta"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%B %-d, %Y" }}</time></p>
+  <div class="detail-body">{{ content }}</div>
+  <p class="note-signature">With love,<br>{{ page.from }}</p>
+  <p class="back-link"><a class="text-link" href="{{ '/love-notes/' | relative_url }}"><span aria-hidden="true">←</span> Back to all love notes</a></p>
+</article>

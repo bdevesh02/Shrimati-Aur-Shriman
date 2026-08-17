@@ -1,0 +1,36 @@
+---
+title: About Us
+permalink: /about/
+subtitle: "Two people, one growing story"
+share-description: "A little about the two people behind this scrapbook."
+---
+{% assign couple = site.data.couple %}
+<div class="page-intro">
+  <p class="eyebrow">Two people, one growing story</p>
+  <p>These profiles are yours to make personal — a few lines can say a lot.</p>
+</div>
+
+<div class="profile-grid">
+  <article class="profile-card reveal-on-scroll">
+    <img src="{{ couple.partner_one.photo | relative_url }}" alt="{{ couple.partner_one.photo_alt }}" width="640" height="760" loading="lazy" decoding="async">
+    <div class="profile-copy">
+      <p class="eyebrow">One half</p>
+      <h2>{{ couple.partner_one.name }}</h2>
+      <p>{{ couple.partner_one.bio }}</p>
+    </div>
+  </article>
+  <article class="profile-card reveal-on-scroll">
+    <img src="{{ couple.partner_two.photo | relative_url }}" alt="{{ couple.partner_two.photo_alt }}" width="640" height="760" loading="lazy" decoding="async">
+    <div class="profile-copy">
+      <p class="eyebrow">The other half</p>
+      <h2>{{ couple.partner_two.name }}</h2>
+      <p>{{ couple.partner_two.bio }}</p>
+    </div>
+  </article>
+</div>
+
+<div class="about-together reveal-on-scroll">
+  <p class="eyebrow">Together since</p>
+  <h2>{{ couple.relationship_start | date: "%B %-d, %Y" }}</h2>
+  <p>{{ couple.welcome_message }}</p>
+</div>

@@ -1,0 +1,127 @@
+backend:
+  name: github
+  repo: bdevesh02/Shrimati-Aur-Shriman
+  branch: master
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+publish_mode: simple
+media_folder: assets/uploads
+public_folder: /assets/uploads
+logo_url: /assets/img/favicon.svg
+
+collections:
+  - name: settings
+    label: Site Settings
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: couple
+        label: Couple & Home Page
+        file: _data/couple.yml
+        fields:
+          - { label: Couple name shown in the hero, name: couple_name, widget: string, hint: "Example: Aanya & Rohan" }
+          - { label: First partner's name, name: partner_one_name, widget: string }
+          - { label: Second partner's name, name: partner_two_name, widget: string }
+          - { label: Relationship start date, name: relationship_start, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+          - { label: Welcome message, name: welcome_message, widget: text }
+          - { label: Main photograph, name: hero_image, widget: image, choose_url: false, media_folder: /assets/uploads/hero, public_folder: /assets/uploads/hero }
+          - { label: Main photograph description, name: hero_image_alt, widget: string, hint: "Describe who and what is in the photo for visitors using screen readers." }
+          - { label: Footer message, name: footer_message, widget: string }
+          - { label: Show countdown, name: show_countdown, widget: boolean, default: true }
+          - { label: Show sample-content notice, name: demo_mode, widget: boolean, default: false, hint: "Turn this off after replacing the examples." }
+          - label: First partner profile
+            name: partner_one
+            widget: object
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Portrait, name: photo, widget: image, choose_url: false, media_folder: /assets/uploads/profiles, public_folder: /assets/uploads/profiles }
+              - { label: Portrait description, name: photo_alt, widget: string }
+              - { label: Short biography, name: bio, widget: text }
+          - label: Second partner profile
+            name: partner_two
+            widget: object
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Portrait, name: photo, widget: image, choose_url: false, media_folder: /assets/uploads/profiles, public_folder: /assets/uploads/profiles }
+              - { label: Portrait description, name: photo_alt, widget: string }
+              - { label: Short biography, name: bio, widget: text }
+
+  - name: memories
+    label: Our Story
+    label_singular: Memory
+    folder: _memories
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{date}} — {{title}}"
+    sortable_fields: [date, title]
+    editor:
+      preview: false
+    fields:
+      - { label: Memory title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+      - { label: Location, name: location, widget: string, required: false }
+      - { label: Photograph, name: image, widget: image, choose_url: false, media_folder: /assets/uploads/timeline, public_folder: /assets/uploads/timeline }
+      - { label: Photograph description, name: image_alt, widget: string, hint: "Briefly describe the people, place, and action in the photograph." }
+      - { label: Photograph caption, name: photo_caption, widget: string, required: false }
+      - { label: Short summary, name: summary, widget: text, hint: "One or two sentences used on the home page and timeline." }
+      - { label: Full story, name: body, widget: markdown }
+
+  - name: gallery
+    label: Photo Gallery
+    label_singular: Photograph
+    folder: _gallery
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{date}} — {{caption}} ({{album}})"
+    sortable_fields: [date, caption, album]
+    editor:
+      preview: false
+    fields:
+      - { label: Caption, name: caption, widget: string }
+      - { label: Date taken, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+      - { label: Album, name: album, widget: string, hint: "Reuse the exact same album name to group related photographs." }
+      - { label: Photograph, name: image, widget: image, choose_url: false, media_folder: /assets/uploads/gallery, public_folder: /assets/uploads/gallery }
+      - { label: Photograph description, name: alt, widget: string, hint: "Briefly describe the people, place, and action in the photograph." }
+
+  - name: love_notes
+    label: Love Notes
+    label_singular: Love Note
+    folder: _love_notes
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{date}} — {{title}}"
+    sortable_fields: [date, title]
+    editor:
+      preview: false
+    fields:
+      - { label: Note title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+      - { label: From, name: from, widget: string }
+      - { label: To, name: to, widget: string }
+      - { label: Short summary, name: summary, widget: text, hint: "One sentence used on the home page and notes list." }
+      - { label: Note, name: body, widget: markdown }
+
+  - name: important_dates
+    label: Important Dates
+    label_singular: Important Date
+    folder: _important_dates
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{date}} — {{title}}"
+    sortable_fields: [date, title, category]
+    editor:
+      preview: false
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+      - { label: Category, name: category, widget: select, options: [Anniversary, Birthday, Trip, Milestone, Other] }
+      - { label: Description, name: description, widget: text }
+      - { label: Small symbol, name: icon, widget: string, default: "✦", hint: "Use one simple symbol or emoji." }
+      - { label: Repeat every year, name: repeats_yearly, widget: boolean, default: false }
+      - { label: Show in home-page countdown, name: show_countdown, widget: boolean, default: false, hint: "Choose this for only one date at a time." }

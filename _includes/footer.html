@@ -2,7 +2,10 @@
   <div class="container-md beautiful-jekyll-footer">
     <div class="row">
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-      {% include social-networks-links.html %}
+      {% if site.social-network-links and site.social-network-links.size > 0 %}
+        {% include social-networks-links.html %}
+      {% endif %}
+      {% include footer-message.html %}
       {% if page.footer-extra %}
         <div class="footer-custom-content">
           {% for file in page.footer-extra %}
@@ -38,7 +41,7 @@
 
       </p>
       {% unless site.remove-ads %}<p class="theme-by text-muted">
-        Powered by
+        Built with
         <a href="https://beautifuljekyll.com">Beautiful Jekyll</a>
       </p>{% endunless %}
       </div>

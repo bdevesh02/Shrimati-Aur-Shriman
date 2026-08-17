@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Main photograph placeholder</title><desc id="desc">A blush and burgundy abstract frame labelled add your favourite photo.</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f5dedb"/><stop offset="1" stop-color="#d9aeb0"/></linearGradient></defs>
+  <rect width="900" height="1100" fill="url(#bg)"/>
+  <circle cx="120" cy="160" r="190" fill="#fff9f4" opacity=".42"/><circle cx="820" cy="900" r="280" fill="#7a233a" opacity=".12"/>
+  <path d="M268 426c93-79 175 8 182 76 7-68 89-155 182-76 118 103-61 275-182 361-121-86-300-258-182-361Z" fill="#7a233a" opacity=".9"/>
+  <text x="450" y="890" text-anchor="middle" fill="#4b1827" font-family="Georgia, serif" font-size="42">Add your favourite photo</text>
+  <text x="450" y="944" text-anchor="middle" fill="#765f63" font-family="Arial, sans-serif" font-size="22" letter-spacing="4">SITE SETTINGS → MAIN PHOTO</text>
+</svg>

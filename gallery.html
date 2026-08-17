@@ -1,0 +1,50 @@
+---
+title: Photo Gallery
+permalink: /gallery/
+subtitle: "Little windows into our life"
+share-description: "Our favourite photographs, organised into albums."
+---
+<div class="page-intro">
+  <p class="eyebrow">Little windows into our life</p>
+  <p>Select an album or open any photograph. Use the arrow keys, swipe, or the on-screen controls to browse.</p>
+</div>
+
+{% assign albums = site.gallery | map: "album" | uniq | sort %}
+<div class="gallery-filters" role="group" aria-label="Filter photographs by album">
+  <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+  {% for album in albums %}
+  <button class="filter-button" type="button" data-filter="{{ album | slugify }}" aria-pressed="false">{{ album }}</button>
+  {% endfor %}
+</div>
+
+<div class="gallery-grid" data-gallery>
+  {% assign photos = site.gallery | sort: "date" | reverse %}
+  {% for photo in photos %}
+  <figure class="gallery-card reveal-on-scroll" data-album="{{ photo.album | slugify }}">
+    <button class="gallery-open" type="button" data-full="{{ photo.image | relative_url }}" data-alt="{{ photo.alt | escape }}" data-caption="{{ photo.caption | escape }}" data-date="{{ photo.date | date: '%B %-d, %Y' }}" aria-label="Open {{ photo.caption | escape }} in fullscreen">
+      <img src="{{ photo.image | relative_url }}" alt="{{ photo.alt }}" width="720" height="880" loading="lazy" decoding="async">
+      <span class="gallery-zoom-hint" aria-hidden="true">View</span>
+    </button>
+    <figcaption><strong>{{ photo.caption }}</strong><span>{{ photo.album }} · <time datetime="{{ photo.date | date: '%Y-%m-%d' }}">{{ photo.date | date: "%B %Y" }}</time></span></figcaption>
+  </figure>
+  {% endfor %}
+</div>
+
+<div class="lightbox" data-lightbox hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="lightbox-toolbar">
+    <button type="button" class="lightbox-button" data-lightbox-zoom aria-label="Zoom photograph">+</button>
+    <button type="button" class="lightbox-button" data-lightbox-close aria-label="Close photo viewer">×</button>
+  </div>
+  <button type="button" class="lightbox-nav lightbox-prev" data-lightbox-prev aria-label="Previous photograph">‹</button>
+  <figure class="lightbox-figure">
+    <div class="lightbox-image-wrap"><img src="{{ '/assets/img/placeholders/gallery-one.svg' | relative_url }}" data-placeholder="{{ '/assets/img/placeholders/gallery-one.svg' | relative_url }}" alt="" data-lightbox-image></div>
+    <figcaption><strong data-lightbox-caption></strong><span data-lightbox-date></span></figcaption>
+  </figure>
+  <button type="button" class="lightbox-nav lightbox-next" data-lightbox-next aria-label="Next photograph">›</button>
+</div>
+
+<aside class="admin-prompt">
+  <h2>A photograph worth keeping?</h2>
+  <p>Upload it, write a caption, choose an album, and publish — all from your browser.</p>
+  <a class="button button-primary" href="{{ '/admin/#/collections/gallery/new' | relative_url }}">Add a photograph</a>
+</aside>
