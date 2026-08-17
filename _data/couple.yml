@@ -4,20 +4,20 @@ partner_two_name: Geet
 relationship_start: 2025-06-07
 welcome_message: This is the home of our favourite moments — the little ones,
   the life-changing ones, and everything still to come.
-hero_image: /assets/uploads/hero/whatsapp-image-2026-06-13-at-18.57.57-2-.jpeg
+hero_image: /assets/uploads/hero/whatsapp-image-2026-08-16-at-17.50.30.jpeg
 hero_image_alt: The Most Perfect Person <3
 footer_message: Still choosing each other, one memory at a time.
 show_countdown: true
 demo_mode: true
 partner_one:
   name: Devesh
-  photo: /assets/img/placeholders/profile-one.svg
+  photo: /assets/uploads/profiles/whatsapp-image-2026-08-16-at-17.59.57.jpeg
   photo_alt: Placeholder portrait for the first partner
-  bio: Add a short, warm introduction here — favourite things, quirks, or what you
-    love about your partner.
+  bio: |-
+    Just a silly Billy
+    -Batman
 partner_two:
-  name: Her Name
-  photo: /assets/img/placeholders/profile-two.svg
+  name: Geet
+  photo: /assets/uploads/profiles/whatsapp-image-2026-08-16-at-17.59.24.jpeg
   photo_alt: Placeholder portrait for the second partner
-  bio: Add a short, warm introduction here — favourite things, quirks, or what you
-    love about your partner.
+  bio: Just the sweetest and most adorable person on earth
