@@ -11,7 +11,6 @@ public_folder: /assets/uploads
 logo_url: /assets/img/favicon.svg
 
 media_library:
-  name: default
   config:
     multiple: true
     max_file_size: 5000000
