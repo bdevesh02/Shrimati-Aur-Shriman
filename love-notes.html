@@ -1,0 +1,31 @@
+---
+title: Love Notes
+permalink: /love-notes/
+subtitle: "Things worth saying, and saving"
+share-description: "Love notes to keep, newest first."
+---
+<div class="page-intro">
+  <p class="eyebrow">Things worth saying, and saving</p>
+  <p>Long letters, quick reminders, and everything in between — with the newest note first.</p>
+</div>
+
+<div class="love-notes-list">
+  {% assign notes = site.love_notes | sort: "date" | reverse %}
+  {% for note in notes %}
+  <article class="note-card note-card-large reveal-on-scroll">
+    <p class="note-date"><time datetime="{{ note.date | date: '%Y-%m-%d' }}">{{ note.date | date: "%B %-d, %Y" }}</time></p>
+    <h2><a href="{{ note.url | relative_url }}">{{ note.title }}</a></h2>
+    <p>{{ note.summary }}</p>
+    <div class="note-card-footer">
+      <span class="note-signature">— {{ note.from }}</span>
+      <a class="text-link" href="{{ note.url | relative_url }}">Read the note <span aria-hidden="true">→</span></a>
+    </div>
+  </article>
+  {% endfor %}
+</div>
+
+<aside class="admin-prompt">
+  <h2>Have something to say?</h2>
+  <p>Write a private-in-spirit note from the publishing dashboard. Remember: the finished website is visible to anyone who has its link.</p>
+  <a class="button button-primary" href="{{ '/admin/#/collections/love_notes/new' | relative_url }}">Write a love note</a>
+</aside>

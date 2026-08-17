@@ -1,0 +1,29 @@
+---
+title: Important Dates
+permalink: /important-dates/
+subtitle: "Days we never want to forget"
+share-description: "Birthdays, anniversaries, trips, and milestones."
+---
+<div class="page-intro">
+  <p class="eyebrow">Days we never want to forget</p>
+  <p>Birthdays, anniversaries, trips, and plans we are looking forward to.</p>
+</div>
+
+<div class="date-grid">
+  {% assign dates = site.important_dates | sort: "date" %}
+  {% for special_date in dates %}
+  <article class="date-card reveal-on-scroll">
+    <div class="date-icon" aria-hidden="true">{{ special_date.icon | default: "✦" }}</div>
+    <p class="date-type">{{ special_date.category }}</p>
+    <h2>{{ special_date.title }}</h2>
+    <p class="date-value"><time datetime="{{ special_date.date | date: '%Y-%m-%d' }}">{{ special_date.date | date: "%B %-d, %Y" }}</time>{% if special_date.repeats_yearly %}<span>Every year</span>{% endif %}</p>
+    <p>{{ special_date.description }}</p>
+  </article>
+  {% endfor %}
+</div>
+
+<aside class="admin-prompt">
+  <h2>A new date for the calendar?</h2>
+  <p>Add it from the dashboard and choose whether it should repeat or appear in the countdown.</p>
+  <a class="button button-primary" href="{{ '/admin/#/collections/important_dates/new' | relative_url }}">Add an important date</a>
+</aside>

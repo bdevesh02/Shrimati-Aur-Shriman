@@ -1,0 +1,12 @@
+---
+layout: page
+---
+<article class="story-detail">
+  <p class="detail-meta"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%B %-d, %Y" }}</time>{% if page.location %}<span>{{ page.location }}</span>{% endif %}</p>
+  <figure class="detail-photo">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt }}" width="1100" height="760" decoding="async">
+    {% if page.photo_caption %}<figcaption>{{ page.photo_caption }}</figcaption>{% endif %}
+  </figure>
+  <div class="detail-body">{{ content }}</div>
+  <p class="back-link"><a class="text-link" href="{{ '/story/' | relative_url }}"><span aria-hidden="true">←</span> Back to our story</a></p>
+</article>

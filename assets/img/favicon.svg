@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Shrimati and Shriman monogram</title>
+  <rect width="64" height="64" rx="18" fill="#7a233a"/>
+  <path d="M17 19c8-7 14 0 15 5 1-5 7-12 15-5 9 9-5 22-15 29C22 41 8 28 17 19Z" fill="#e8c98b"/>
+  <path d="M25 25c2-3 6-3 8 0M32 25c2-3 6-3 8 0" fill="none" stroke="#7a233a" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

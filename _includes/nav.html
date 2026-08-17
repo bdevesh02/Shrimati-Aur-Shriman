@@ -30,6 +30,12 @@
           </li>
         {%- endif -%}
       {%- endfor -%}
+      <li class="nav-item nav-tool-item">
+        <button class="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">
+          <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+          <span class="sr-only theme-toggle-label">Use dark mode</span>
+        </button>
+      </li>
       {% if site.post_search %}
         <li class="nav-item">
           <a class="nav-link" id="nav-search-link" href="#" title="Search">
