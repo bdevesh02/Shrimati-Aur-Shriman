@@ -164,7 +164,7 @@
 
     function close() {
       lightbox.hidden = true;
-      image.src = "";
+      image.src = image.dataset.placeholder;
       document.body.classList.remove("lightbox-open");
       lightbox.classList.remove("is-zoomed");
       if (lastFocused) lastFocused.focus();
