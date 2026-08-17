@@ -6,6 +6,8 @@
   --burgundy: #7a233a;
   --burgundy-dark: #4b1827;
   --accent-surface: #4b1827;
+  --button-bg: #7a233a;
+  --button-hover: #4b1827;
   --gold: #b28a45;
   --gold-light: #e8c98b;
   --ink: #3f2a2d;
@@ -26,6 +28,8 @@ html[data-theme="dark"] {
   --burgundy: #e5a0b2;
   --burgundy-dark: #f1c6d0;
   --accent-surface: #321923;
+  --button-bg: #9c3f5d;
+  --button-hover: #b85270;
   --gold: #d4b26f;
   --gold-light: #e3c787;
   --ink: #f7eeeb;
@@ -119,7 +123,7 @@ select:focus-visible {
 .theme-toggle:hover { background: var(--blush); }
 
 .demo-banner {
-  background: var(--burgundy-dark);
+  background: var(--accent-surface);
   color: #fff;
   font-size: 0.9rem;
   margin-top: 4.65rem;
@@ -212,8 +216,8 @@ select:focus-visible {
 }
 
 .button:hover { box-shadow: var(--small-shadow); transform: translateY(-2px); }
-.button-primary { background: var(--burgundy); color: #fff; }
-.button-primary:hover { background: var(--burgundy-dark); color: #fff; }
+.button-primary { background: var(--button-bg); color: #fff; }
+.button-primary:hover { background: var(--button-hover); color: #fff; }
 .button-secondary { background: transparent; color: var(--burgundy); }
 .button-secondary:hover { background: var(--blush); color: var(--burgundy-dark); }
 
@@ -385,7 +389,7 @@ main.container-md { padding-bottom: 5rem; }
 
 .gallery-filters { display: flex; flex-wrap: wrap; gap: 0.65rem; justify-content: center; margin-bottom: 2rem; }
 .filter-button { background: transparent; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); cursor: pointer; font-size: 0.8rem; font-weight: 700; padding: 0.55rem 1rem; }
-.filter-button:hover, .filter-button.is-active { background: var(--burgundy); border-color: var(--burgundy); color: #fff; }
+.filter-button:hover, .filter-button.is-active { background: var(--button-bg); border-color: var(--button-bg); color: #fff; }
 
 .gallery-grid { columns: 3 220px; column-gap: 1.1rem; }
 .gallery-card { break-inside: avoid; margin: 0 0 1.1rem; }
